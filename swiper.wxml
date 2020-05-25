@@ -1,0 +1,37 @@
+<view class="top_box">
+	<view class="wrap">
+		<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" circular="{{circular}}" bindchange="swiperChange">
+			<block wx:for="{{imgs}}">
+				<swiper-item>
+					<image src="{{item.url}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<!--重置小圆点的样式  -->
+		<view class="dots">
+			<block wx:for="{{imgs}}">
+				<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+			</block>
+		</view>
+	</view>
+
+	<!-- 7个竖着的条条 -->
+	<view class="kaigong_box">
+		<view class="kaigong" wx:for="{{7}}">
+			<view class="kaigongyuan"><text></text></view>
+			<view>开工大吉</view>
+		</view>
+	</view>
+</view>
+
+<view class="swiper_line"></view>
+<!-- 施工信息 -->
+<scroll-view scroll-y>
+	<view class="shigong">施工信息</view>
+	<view wx:for="{{6}}" class="didian">
+		<text class="didian1">施工地点：</text><text> 北京朝阳</text>
+	</view>
+	<view class="didian1">施工信息施工信息施工信息施工信息施工信息施工信息施工信息施工信息施工信息施工信息施工信息</view>
+</scroll-view>
+
+<view class="swiper_footer">预约参观</view>
